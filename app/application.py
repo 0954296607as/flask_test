@@ -1,3 +1,5 @@
+# from flask_cors import CORS
+
 from config import Config
 from flask import Flask
 from app.main.routers import bp as main_bp
@@ -10,6 +12,7 @@ class WebApplication:
     def create_app() -> Flask:
         app = Flask(__name__)
         app.config.from_object(Config)
+        # CORS(app)
 
         db.init_app(app)
         app.app_context().push()

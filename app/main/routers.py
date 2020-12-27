@@ -4,12 +4,12 @@ import json
 
 
 from app.models.ticker import Ticket
-from environment import get_app_template_folder
+from environment import get_angular_project_path
 from ..extentions import db
 
 
-FLASK_TEST_NG_PATH = get_app_template_folder()
-bp = Blueprint('main', __name__, template_folder=FLASK_TEST_NG_PATH)
+FLASK_TEST_NG_PATH = get_angular_project_path()
+bp = Blueprint('main', __name__)
 
 
 @bp.route('/', methods=['GET', 'POST'])
